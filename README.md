@@ -1,2 +1,3 @@
 # maven-template
-Template pour les application maven
+
+GitHub template for Java applications with Maven.
