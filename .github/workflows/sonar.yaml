@@ -2,12 +2,6 @@ on:
   push:
     branches:
       - develop
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-  pull_request:
-    branches:
-      - develop
   workflow_dispatch:
 
 jobs:
@@ -17,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up JDK 21 & Maven 3.9.9
         uses: s4u/setup-maven-action@v1.17.0
         with:
           java-version: '21'
@@ -25,4 +19,8 @@ jobs:
           maven-version: 3.9.9
 
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        env:
+          TOKEN: ${{ secrets.SONAR_TOKEN }}
+          URI: ${{ vars.SONAR_URI }}
+        run: |
+          mvn clean verify sonar:sonar -Dsonar.host.url=$URI -Dsonar.login=$TOKEN --batch-mode --update-snapshots

@@ -10,12 +10,12 @@
     <packaging>pom</packaging>
 
     <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-		<checkstyle.version>10.20.1</checkstyle.version>
+		<checkstyle.version>10.21.0</checkstyle.version>
 		<spring-javaformat-checkstyle.version>0.0.43</spring-javaformat-checkstyle.version>
     </properties>
 
@@ -44,6 +44,7 @@
 						<inherited>true</inherited>
 						<configuration>
 							<configLocation>checkstyle/checkstyle.xml</configLocation>
+							<suppressionsLocation>checkstyle/checkstyle-suppressions.xml</suppressionsLocation>
 							<includeTestSourceDirectory>true</includeTestSourceDirectory>
 						</configuration>
 						<goals>
