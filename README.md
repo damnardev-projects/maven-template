@@ -43,12 +43,12 @@ Pour ajouter un plugin, vous devez éditer la section **pluginManagement** du **
 
 Pour ajouter un nouveau module dans le projet, vous devez suivre les étapes ci-dessous.
 
-1. Ajouter le module dans le **pom.xml** racine.
-2. Déclarer sa dépendance dans le bloc **dependencyManagement** du **maven-template-dependencies/pom.xml**.
-3. Créer le module avec **maven-template-internal-parent** comme parent.
-4. Référencer le module dans le ***maven-template-tests/pom.xml**.
+1. Créez le module avec **maven-template-internal-parent** comme parent.
+2. Déclarez le module dans le fichier **pom.xml** racine.
+3. Déclarez le module dans le bloc **dependencyManagement** du **maven-template-dependencies/pom.xml**.
+4. Déclarez le module comme dépendance dans le **maven-template-tests/pom.xml**.
 
-Si vous n'ajoutez pas le projet dans le **maven-template-tests/pom.xml**, sa couverture ne sera pas agrégée.
+Si vous n'ajoutez pas le module dans le **maven-template-tests/pom.xml**, sa couverture ne sera pas agrégée.
 
 ## GitHub
 
