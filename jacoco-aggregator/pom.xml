@@ -6,12 +6,12 @@
 
 	<parent>
 		<groupId>fr.damnardev.template.maven</groupId>
-		<artifactId>maven-template-parent</artifactId>
+		<artifactId>parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../maven-template-parent/pom.xml</relativePath>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>maven-template-tests</artifactId>
+	<artifactId>jacoco-aggregator</artifactId>
 	<packaging>pom</packaging>
 
 	<name>Maven Template - Tests</name>
@@ -25,11 +25,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>fr.damnardev.template.maven</groupId>
-			<artifactId>maven-template-common</artifactId>
+			<artifactId>common</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>fr.damnardev.template.maven</groupId>
-			<artifactId>maven-template-cli</artifactId>
+			<artifactId>cli</artifactId>
 		</dependency>
 	</dependencies>
 
