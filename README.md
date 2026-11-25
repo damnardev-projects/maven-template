@@ -8,15 +8,15 @@ Ci-dessous, vous trouverez des informations sur les fichiers et répertoires imp
 
 Le fichier `pom.xml` racine liste les modules, configure SonarQube et JaCoCo.
 
-Le module `maven-template-dependencies` centralise les versions des dépendances et des plugins.
+Le module `dependencies` centralise les versions des dépendances et des plugins.
 
-Le module `maven-template-parent` configure la version de Java et l'encodage, et hérite de `maven-template-dependencies`.
+Le module `parent` configure la version de Java et l'encodage, et hérite de `dependencies`.
 
-Le module `maven-template-internal-parent` est un module utilitaire qui sert de parent pour les modules internes. Il hérite de `maven-template-parent` et configure `flatten-maven-plugin` en mode OSSRH.
+Le module `internal-parent` est un module utilitaire qui sert de parent pour les modules internes. Il hérite de `parent` et configure `flatten-maven-plugin` en mode OSSRH.
 
-Les modules `maven-template-common` et `maven-template-cli` sont des exemples du template. Ils héritent tous deux de `maven-template-internal-parent`.
+Les modules `common` et `cli` sont des exemples du template. Ils héritent tous deux de `internal-parent`.
 
-Le module `maven-template-tests` sert à agréger les résultats des tests et de couverture.
+Le module `jacoco-aggregator` sert à agréger les résultats des tests et de couverture.
 
 ## Installation
 
@@ -27,15 +27,15 @@ Une fois le projet cloné, exécutez la commande `./mvnw clean verify` pour tél
 - `./mvnw clean` : supprime les fichiers générés
 - `./mvnw compile` : compile le projet
 - `./mvnw test` : exécute les tests unitaires
-- `./mvnw verify` : exécute les tests et génère un rapport de couverture dans `maven-template-tests/target/site/jacoco-aggregate`
+- `./mvnw verify` : exécute les tests et génère un rapport de couverture dans `jacoco-aggregator/target/site/jacoco-aggregate`
 - `./mvnw install` : installe le projet dans le dépôt local Maven
-- `./mvnw exec:java -pl maven-template-cli` : exécute l'application en ligne de commande
+- `./mvnw exec:java -pl cli` : exécute l'application en ligne de commande
 - `./mvnw versions:display-dependency-updates` : liste les mises à jour disponibles des dépendances
 - `./mvnw versions:display-plugin-updates` : liste les mises à jour disponibles des plugins
 
 ## Ajouter une dépendance
 
-Vous devez éditer la section `dependencyManagement` du fichier `maven-template-dependencies/pom.xml` pour déclarer la nouvelle dépendance.
+Vous devez éditer la section `dependencyManagement` du fichier `dependencies/pom.xml` pour déclarer la nouvelle dépendance.
 
 Pour ajouter un plugin, vous devez éditer la section `pluginManagement` du même fichier pour déclarer le plugin.
 
@@ -43,12 +43,12 @@ Pour ajouter un plugin, vous devez éditer la section `pluginManagement` du mêm
 
 Pour ajouter un nouveau module dans le projet, vous devez suivre les étapes ci-dessous.
 
-1. Créez le module avec `maven-template-internal-parent` comme parent.
+1. Créez le module avec `internal-parent` comme parent.
 2. Déclarez le module dans le fichier `pom.xml` racine.
-3. Déclarez le module dans la section `dependencyManagement` du fichier `maven-template-dependencies/pom.xml`.
-4. Déclarez le module comme dépendance dans le fichier `maven-template-tests/pom.xml`.
+3. Déclarez le module dans la section `dependencyManagement` du fichier `dependencies/pom.xml`.
+4. Déclarez le module comme dépendance dans le fichier `jacoco-aggregator/pom.xml`.
 
-Si vous n'ajoutez pas le module dans le fichier `maven-template-tests/pom.xml`, sa couverture ne sera pas agrégée.
+Si vous n'ajoutez pas le module dans le fichier `jacoco-aggregator/pom.xml`, sa couverture ne sera pas agrégée.
 
 ## GitHub
 

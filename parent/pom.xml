@@ -6,12 +6,12 @@
 
 	<parent>
 		<groupId>fr.damnardev.template.maven</groupId>
-		<artifactId>maven-template-dependencies</artifactId>
+		<artifactId>dependencies</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../maven-template-dependencies/pom.xml</relativePath>
+		<relativePath>../dependencies/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>maven-template-parent</artifactId>
+	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
 
 	<name>Maven Template - Parent</name>

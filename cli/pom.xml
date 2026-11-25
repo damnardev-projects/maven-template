@@ -6,12 +6,12 @@
 
 	<parent>
 		<groupId>fr.damnardev.template.maven</groupId>
-		<artifactId>maven-template-internal-parent</artifactId>
+		<artifactId>internal-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../maven-template-internal-parent/pom.xml</relativePath>
+		<relativePath>../internal-parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>maven-template-cli</artifactId>
+	<artifactId>cli</artifactId>
 	<packaging>jar</packaging>
 
 	<name>Maven Template - CLI</name>
@@ -20,7 +20,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>fr.damnardev.template.maven</groupId>
-			<artifactId>maven-template-common</artifactId>
+			<artifactId>common</artifactId>
 		</dependency>
 
 		<dependency>
